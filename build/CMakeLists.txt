@@ -146,6 +146,7 @@ endmacro(source_group_by_dir)
 
 source_group_by_dir(${CMAKE_CURRENT_SOURCE_DIR} LUA_SOCKET)
 source_group_by_dir(${CMAKE_CURRENT_SOURCE_DIR} LUA_CJSON)
+source_group_by_dir(${CMAKE_CURRENT_SOURCE_DIR} LUA_PDEBUG)
 source_group_by_dir(${CMAKE_CURRENT_SOURCE_DIR} LUA_CORE)
 source_group_by_dir(${CMAKE_CURRENT_SOURCE_DIR} LUA_LIB)
 source_group_by_dir(${CMAKE_CURRENT_SOURCE_DIR} XLUA_CORE)
@@ -159,6 +160,7 @@ if (APPLE)
            ${LUA_LIB}
            ${LUA_SOCKET}
            ${LUA_CJSON}
+           ${LUA_PDEBUG}
            ${XLUA_CORE}
            ${THIRDPART_SRC}
         )
@@ -173,6 +175,7 @@ if (APPLE)
                 ${LUA_LIB}
                 ${LUA_SOCKET}
                 ${LUA_CJSON}
+                ${LUA_PDEBUG}
                 ${XLUA_CORE}
                 ${THIRDPART_SRC}
             )
@@ -183,6 +186,7 @@ if (APPLE)
                 ${LUA_LIB}
                 ${LUA_SOCKET}
                 ${LUA_CJSON}
+                ${LUA_PDEBUG}
                 ${XLUA_CORE}
                 ${THIRDPART_SRC}
             )
@@ -205,6 +209,7 @@ else ( )
         ${LUA_LIB}
         ${LUA_SOCKET}
         ${LUA_CJSON}
+        ${LUA_PDEBUG}
         ${XLUA_CORE}
         ${THIRDPART_SRC}
     )
@@ -223,7 +228,7 @@ if (LUAC_COMPATIBLE_FORMAT AND NOT USING_LUAJIT)
 endif ()
 
 set_property(
-	SOURCE ${LUA_SOCKET} ${LUA_CJSON}
+	SOURCE ${LUA_SOCKET} ${LUA_CJSON} ${LUA_PDEBUG}
 	APPEND
 	PROPERTY COMPILE_DEFINITIONS
 	LUA_COMPAT_APIINTCASTS LUA_LIB _CRT_SECURE_NO_WARNINGS _WINSOCK_DEPRECATED_NO_WARNINGS
