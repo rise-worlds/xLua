@@ -118,6 +118,11 @@ set(LUA_CJSON
     cjson/strbuf.c
 )
 
+set(LUA_PDEBUG
+    libpdebug/libpdebug.cpp
+    libpdebug/libpdebug.h
+)
+
 set ( XLUA_CORE
     i64lib.c
     xlua.c
